@@ -1,0 +1,10 @@
+------ PT8.55 and higher === PT8.58  ------ version
+set log E:\temp\datamove.log
+update PSSTATUS set OWNERID = 'SYSADM';
+grant select on PSSTATUS to PEOPLE;
+grant select on PSOPRDEFN to PEOPLE;
+grant select on PSACCESSPRFL to PEOPLE;
+update PSACCESSPRFL set ACCESSID = 'SYSADM', ACCESSPSWD = '<sysadm_password>', ENCRYPTED = 0;
+UPDATE PSACCESSPROFILE SET STM_ACCESS_ID = 'SYSADM', SYMBOLICID = 'SYSADM1', STM_ACCESS_PSWD = '<sysadm_password>', VERSION = 1, ENCRYPTED = 0;
+update PSOPRDEFN set OPERPSWD='user_password', ENCRYPTED=0 where OPRID='<userIDuseforboot>';
+encrypt_password *;
