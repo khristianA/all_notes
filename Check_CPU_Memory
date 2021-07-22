@@ -1,0 +1,11 @@
+Check (size)/how many Linux CPU/Processor
+-------------------------------------------
+lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+lscpu | grep -E '^Thread|^Core|^Socket|^CPU'
+
+Check (size)/how many memory - Linux
+-------------------------------------------
+egrep --color 'Mem|Cache|Swap' /proc/meminfo
+
+egrep 'Mem|Cache|Swap' /proc/meminfo --color | awk '{print  $1 "  " $2 / 1024 / 1024 " GB"}'
+egrep --color 'Mem|Cache|Swap' /proc/meminfo
