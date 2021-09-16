@@ -1,0 +1,7 @@
+#Using the brace notation in general follows the following pattern… 
+#{string1,string2,string3}: a comma separated list of strings or characters
+#{start..end}: A start and end value, either numerical or string that denotes the range
+#{start..end..incr}: Same as above, but with an increment value
+
+ls -l  test{1..36}.txt 2>/dev/null - list files from 1-36
+
